@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+/* ---------variables ------------ */
+:root {
+    /* colors */
+    /* Primary */
+    --color-Purple: hsl(259, 100%, 65%);
+    --color-Light-red: hsl(0, 100%, 67%);
+  
+    /* Neutral */
+    --color-Light-grey: hsl(0, 0%, 86%);
+    --color-Smokey-grey: hsl(0, 1%, 44%);
+    --color-Off-black: hsl(0, 0%, 8%);
+    --color-White: hsl(0, 0%, 100%);
+    --color-Off-white: hsl(0, 0%, 94%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
