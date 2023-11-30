@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
-  <link rel="stylesheet" href="./styles/desktop.css" media="screen and (min-width: 376px)">
-  <link rel="stylesheet" href="./styles/mobil.css" media="screen and (max-width: 375px)">
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  Day
-  DD
+    <title>Frontend Mentor | Age calculator app</title>
+    <link
+      rel="stylesheet"
+      href="./styles/desktop.css"
+      media="screen and (min-width: 376px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles/mobil.css"
+      media="screen and (max-width: 375px)"
+    />
+  </head>
+  <body>
+    <main class="card">
+      <form >
+        <div class="card__inputs">
+          <div class="card__input">
+            <p>Day</p>
+            <input type="text" id="input-day"/>
+          </div>
+          <div class="card__input">
+            <p>Month</p>
+            <input type="text" id="input-month" />
+          </div>
+          <div class="card__input">
+            <p>Year</p>
+            <input type="text" id="input-year" />
+          </div>
+        </div>
+        <div class="card__submit">
+       <div class="line"></div>
+          <button type="submit" class="btn__arrow">
+            <img src="./assets/images/icon-arrow.svg" alt="icon from un arrow down" />
+          </button>
+        </div>
+      </form>
+      <div class="card__results">-- years -- months -- days</div>
+    </main>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
