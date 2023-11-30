@@ -1,4 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
 
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* ---------variables ------------ */
+:root {
+    /* colors */
+    /* Primary */
+    --color-Purple: hsl(259, 100%, 65%);
+    --color-Light-red: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --color-Light-grey: hsl(0, 0%, 86%);
+    --color-Smokey-grey: hsl(0, 1%, 44%);
+    --color-Off-black: hsl(0, 0%, 8%);
+    --color-White: hsl(0, 0%, 100%);
+    --color-Off-white: hsl(0, 0%, 94%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-Light-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+
+.card {
+    height: 500px;
+    width: 320px;
+    background-color: var(--color-White);
+    border-radius: 16px 16px 140px 16px;
+    padding: 15px;
+    margin-top: 60px;
+}
+
+.card__inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__input {
+    width: 80px;
+}
+
+.input-date {
+    width: 80px;
+    height: 50px;
+    padding: 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: solid var(--color-Light-grey) 0.5px;
+    border-radius: 5px;
+}
+
+.card__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btn__arrow img {
+    height: 30px;
+    width: 30px;
+}
+
+.btn__arrow {
+    border: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--color-Purple);
+    cursor: pointer;
+    margin-top: 2rem;
+    z-index: 10;
+}
+
+.line {
+    border-top: 1px solid var(--color-Light-grey);
+    height: 2px;
+    width: 85%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.card__results {
+    margin-top: 50px;
+}
+
+.card__results h2 {
+    color: black;
+    font-size: 3.6rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 60px;
+}
+
+.card__results span {
+    color: var(--color-Purple);
+}
+
+
+.attribution {
+    position: fixed;
+    bottom: 0px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

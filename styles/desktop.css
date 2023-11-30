@@ -42,7 +42,6 @@ body {
 
 .card__inputs {
     display: flex;
-   
 }
 
 .card__input {
@@ -50,7 +49,7 @@ body {
     margin-right: 30px;
 }
 
-.card__input p {
+.input-label     {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -89,6 +88,10 @@ body {
     cursor: pointer;
 }
 
+.btn__arrow:hover{
+    background-color: black;
+}
+
 .card__submit{
     display: flex;
     justify-content: space-around;
@@ -98,7 +101,7 @@ body {
 .line {
     border-top: 1px solid var(--color-Light-grey);
     height: 2px;
-    width: 90%;
+    width: 85%;
   }
 
  .card__results h2{
@@ -111,8 +114,24 @@ body {
 
   .card__results span{
     color:var(--color-Purple);
- 
   }
+
+  .input-warning{
+   color: var(--color-Light-red);
+   font-size: 10px;
+   font-weight: lighter;
+   font-style: italic;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .red{
+    color:var(--color-Light-red)
+  }
+
+
 
 .attribution {
     position: absolute;
