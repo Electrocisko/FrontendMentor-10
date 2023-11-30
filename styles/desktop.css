@@ -57,7 +57,7 @@ body {
     color: var(--color-Smokey-grey);
 }
 
-.card__input input {
+.input-date {
     width: 100%;
     height: 55px;
     padding: 16px;
@@ -67,7 +67,8 @@ body {
     border-radius: 5px;
 }
 
-.card__input input:hover {
+.input-date:hover, .input-date:focus, .input-date:active {
+    outline: none;
     border: solid var(--color-Purple) 0.6px;
 }
 
@@ -98,7 +99,6 @@ body {
     height: 2px;
     width: 90%;
   }
-
 
 .attribution {
     position: absolute;

@@ -26,29 +26,36 @@
   </head>
   <body>
     <main class="card">
-      <form >
+      <form>
         <div class="card__inputs">
           <div class="card__input">
             <p>Day</p>
-            <input type="text" id="input-day"/>
+            <input type="text" id="input-day" class="input-date" />
           </div>
           <div class="card__input">
             <p>Month</p>
-            <input type="text" id="input-month" />
+            <input type="text" id="input-month" class="input-date"/>
           </div>
           <div class="card__input">
             <p>Year</p>
-            <input type="text" id="input-year" />
+            <input type="text" id="input-year"class="input-date" />
           </div>
         </div>
         <div class="card__submit">
-       <div class="line"></div>
+          <div class="line"></div>
           <button type="submit" class="btn__arrow">
-            <img src="./assets/images/icon-arrow.svg" alt="icon from un arrow down" />
+            <img
+              src="./assets/images/icon-arrow.svg"
+              alt="icon from un arrow down"
+            />
           </button>
         </div>
       </form>
-      <div class="card__results">-- years -- months -- days</div>
+      <div class="card__results">
+        <h2><span>--</span> years</h2>
+        <h2><span>--</span> months</h2>
+        <h2><span>--</span> days</h2>
+      </div>
     </main>
 
     <div class="attribution">
