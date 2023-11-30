@@ -42,7 +42,7 @@ body {
 
 .card__inputs {
     display: flex;
-    margin-bottom: 30px;
+   
 }
 
 .card__input {
@@ -55,6 +55,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--color-Smokey-grey);
+    margin-bottom: 5px;
 }
 
 .input-date {
@@ -69,18 +70,18 @@ body {
 
 .input-date:hover, .input-date:focus, .input-date:active {
     outline: none;
-    border: solid var(--color-Purple) 0.6px;
+    border: solid var(--color-Purple) 1px;
 }
 
 .btn__arrow img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
 
 .btn__arrow{
     border: none;
-    height: 60px;
-    width: 60px;
+    height: 76px;
+    width: 76px;
     border-radius: 50%;
     background-color: var(--color-Purple);
     padding: 10px;
@@ -98,6 +99,19 @@ body {
     border-top: 1px solid var(--color-Light-grey);
     height: 2px;
     width: 90%;
+  }
+
+ .card__results h2{
+    color:black;
+    font-size: 4.5rem;
+    font-weight: 800;
+    font-style: italic;
+   line-height: 75px;
+  }
+
+  .card__results span{
+    color:var(--color-Purple);
+ 
   }
 
 .attribution {
