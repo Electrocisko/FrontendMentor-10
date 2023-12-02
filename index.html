@@ -26,21 +26,21 @@
   </head>
   <body>
     <main class="card">
-      <form>
+      <form id="formInputs">
         <div class="card__inputs">
           <div class="card__input">
             <p class="input-label ">Day</p>
-            <input type="text" id="input-day" class="input-date" placeholder="DD"/>
+            <input type="text" id="input-day" class="input-date" placeholder="DD" name="day"/>
             <p class="input-warning "></p>
           </div>
           <div class="card__input">
             <p class="input-label">Month</p>
-            <input type="text" id="input-month" class="input-date" placeholder="MM"/>
+            <input type="text" id="input-month" class="input-date" placeholder="MM" name="month"/>
             <p class="input-warning "></p>
           </div>
           <div class="card__input">
             <p class="input-label">Year</p>
-            <input type="text" id="input-year"class="input-date" placeholder="YYYY" />
+            <input type="text" id="input-year"class="input-date" placeholder="YYYY" name="year"/>
             <p class="input-warning "></p>
           </div>
         </div>
@@ -55,9 +55,9 @@
         </div>
       </form>
       <div class="card__results">
-        <h2><span>38</span> years</h2>
-        <h2><span>3</span> months</h2>
-        <h2><span>26</span> days</h2>
+        <h2><span>--</span> years</h2>
+        <h2><span>--</span> months</h2>
+        <h2><span>--</span> days</h2>
       </div>
     </main>
 
@@ -67,5 +67,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Francisco J. Zuidwijk</a>.
     </div>
+   <script src="./scripts/script.js"></script>
   </body>
 </html>
