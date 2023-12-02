@@ -8,38 +8,29 @@ form.addEventListener('submit', (e) => {
     let month = data.get('month');
     let year = data.get('year');
 
-    console.log(day,month,year);
     calculateAge(day,month,year)
   
 })
 
 function calculateAge (day,month,year) {
-const today = Date.now();
-const birth = new Date(year,month-1,day)
-let ageY = today.getFullYear() - year;
-let ageM = today.getMonth() - month;
-if(ageM < 0 ) {
-     ageM = 0
-}
-
-console.log('dia de hoy:' + today.getDay());
-console.log('dia nacimientos' + day);
-
-let ageD = today.getDay() - day;
-
+const today = new Date();
+const birth = new Date(year,month,day)
 const todayMili = today.getTime();
 const birthMili = birth.getTime();
+let diference = todayMili-birthMili
 
-console.log('Anos:', ageY);
-console.log('Meses:',ageM);
-console.log('Dias? ',ageD);
+console.log(diference);
 
-// let diference = todayMili-birthMili
+let inDays = diference/1000/60/60/24
+let years = Math.floor(inDays/365);
+let months =  Math.floor((inDays % 365)/30)
+let days =    Math.ceil((diference - (31536000000* years) - (2629800000 * months))/86400000)
 
-// console.log(diference);
-
-// let days = diference/1000/60/60/24
-
-// console.log(days);
+console.log({
+    years,
+    months,
+    days
+    
+});
 
 }
