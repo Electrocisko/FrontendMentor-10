@@ -1,45 +1,110 @@
-const form = document.querySelector('#formInputs');
-const btnSubmit = document.querySelector('.btn__arrow');
+const form = document.querySelector("#formInputs");
+const btnSubmit = document.querySelector(".btn__arrow");
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = new FormData(form);
+  let day = data.get("day");
+  let month = data.get("month");
+  let year = data.get("year");
+  const date1 = new Date(year, parseInt(month) - 1, day);
+  calculateAge(date1);
+});
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let data = new FormData(form);
-    let day = data.get('day');
-    let month = data.get('month');
-    let year = data.get('year');
-    const date1= new Date(year,parseInt(month)-1, day);
-    calculateAge(date1)
-})
+function calculateAge(date1) {
+  const date2 = new Date(); // DATE2 IS TODAY
+  console.log(date2);
+  const month1 = date1.getMonth();
+  const month2 = date2.getMonth();
+  const year1 = date1.getFullYear();
+  const year2 = date2.getFullYear();
+  const day1 = date1.getDate();
+  const day2 = date2.getDate();
 
-function calculateAge (date1) {
-    const date2 = new Date();
-    const month1 = date1.getMonth();
-    const month2 = date2.getMonth();
-    const year1 = date1.getFullYear();
-    const year2 = date2.getFullYear();
-    const day1= date1.getDate();
-    const day2= date2.getDate();
-    
-    let diffMonth = month2 - month1;
-    
-    if(diffMonth > 0) { //cumplio años
-        const years = year2-year1
-        console.log('Edad: '+ years );
-    } else if (diffMonth < 0) { //Todavia no cumplio años
-        const years = (year2-year1)-1
-        console.log('Edad: '+ years );
-    } else { // cumple este mes
-        const diffDay = day2-day1;
-        if (diffDay < 0) { //Todavia no cumplio años
-            const years = (year2-year1)-1
-            console.log('Edad: '+ years );
-        } else if (diffDay > 0) { // ya cumplio años
-            const years = year2-year1
-            console.log('Edad: '+ years );
-        } else { // cumple hoy
-            const years = year2-year1
-            console.log('Cumple hoy: '+ years );
-        }
+  let daysOfMonthPast = 31;
+  let monthPast = month2 - 1;
+  if (monthPast < 0) monthPast = 11;
+  if (monthPast == 3 || monthPast == 5 || monthPast == 8 || monthPast == 10)
+    daysOfMonthPast = 30;
+  if (monthPast == 1) {
+    daysOfMonthPast = 28;
+    //  Leap year missing
+  }
+
+  let diffMonth = month2 - month1;
+
+  if (diffMonth > 0) {
+    //after birthday
+    const years = year2 - year1;
+    let months = month2 - month1;
+    let days = 0;
+    if (day1 > day2) {
+      months = months - 1;
+      days = daysOfMonthPast - day1 + day2;
+    } else if (day1 < day2) {
+      days = day2 - day1;
     }
+    console.log({
+      years,
+      months,
+      days,
+    });
+  } else if (diffMonth < 0) {
+    //before birthday
+    let years = year2 - year1 - 1;
+    let months = 12 - month1 + month2;
+    let days = 0;
+    if (day1 > day2) {
+      days = day1 - day2;
+    } else if (day1 < day2) {
+      months = months - 1;
+      days = daysOfMonthPast - day2 + day1;
+    }
+    console.log({
+      years,
+      months,
+      days,
+    });
+  } else {
+    // birthday is this month
+    const diffDay = day2 - day1;
+    if (monthPast < 0) monthPast = 11;
+    if (monthPast == 3 || monthPast == 5 || monthPast == 8 || monthPast == 10)
+      daysOfMonthPast = 30;
+    if (monthPast == 1) {
+      daysOfMonthPast = 28;
+      //  Leap year missing
+    }
+    let days = 0;
+    if (diffDay < 0) {
+      //before birthday
+      const years = year2 - year1 - 1;
+      const months = 11;
+      days = daysOfMonthPast - day1 + day2;
+      console.log({
+        years,
+        months,
+        days,
+      });
+    } else if (diffDay > 0) {
+      //after birthday
+      const years = year2 - year1;
+      const months = 0;
+      days = day2 - day1;
+      console.log({
+        years,
+        months,
+        days,
+      });
+    } else {
+      // birthday is today
+      const years = year2 - year1;
+      const months = 0;
+      console.log({
+        years,
+        months,
+        days,
+      });
+    }
+  }
 }

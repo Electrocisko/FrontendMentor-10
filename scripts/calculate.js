@@ -32,4 +32,11 @@ if(diffMonth > 0) { //cumplio años
 }
 
 
+//31 dias 1,3,5,7,8,10,12
+//30 dias 4,6,9,11
+//28 dias 2 
 
+
+function calculateDays(day1, day2, month1, month2) {
+
+}
