@@ -127,9 +127,10 @@ body {
     display: none;
   }
 
-  .red{
-    color:var(--color-Light-red)
+  .warning {
+    color: var(--color-Light-red);
   }
+
 
 .attribution {
     position: absolute;
