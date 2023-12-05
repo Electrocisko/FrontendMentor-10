@@ -131,6 +131,10 @@ body {
     color: var(--color-Light-red);
   }
 
+  .border-warning {
+    border: solid var(--color-Light-red) 1px;
+  }
+
 
 .attribution {
     position: absolute;

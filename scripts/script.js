@@ -5,6 +5,7 @@ const inputWarning = document.querySelectorAll(".input-warning");
 const inputYearWarning = document.querySelector("#input-year-warning");
 const inputMonthWarning = document.querySelector("#input-month-warning");
 const inputDayWarning = document.querySelector("#input-day-warning");
+const inputDate = document.querySelectorAll(".input-date");
 
 const date2 = new Date(); // DATE2 IS TODAY
 console.log(date2);
@@ -19,9 +20,9 @@ form.addEventListener("submit", (e) => {
     addWarnings();
     addWarningsText();
   }
-////////////////////////
-if (day) removeWarnings();
-/////////////////////
+
+if (day || month || year) removeWarnings();
+
 if(year > date2.getFullYear() || year < 1 ) {
   addWarnings()
  inputYearWarning.innerHTML="Must be in the past"
@@ -41,13 +42,6 @@ if (month == 4 || month == 6 || month == 9 || month == 11) {
   addWarnings();
   inputDayWarning.innerHTML="Must be a valid day"
  }
- 
- 
-  
-
-
-
-
   const date1 = new Date(year, parseInt(month) - 1, day);
   calculateAge(date1);
 });
@@ -56,8 +50,11 @@ if (month == 4 || month == 6 || month == 9 || month == 11) {
 
 function addWarnings () {
 inputLabel.forEach(input => {
-  input.classList.add("warning")
+  input.classList.add("warning");
 });
+ inputDate.forEach(date => {
+  date.classList.add("border-warning")
+ });
 }
 
 function addWarningsText () {
@@ -73,20 +70,10 @@ function removeWarnings () {
   inputWarning.forEach(text => {
     text.innerHTML=''
   });
+  inputDate.forEach(date => {
+    date.classList.remove("border-warning")
+   });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function calculateAge(date1) {
