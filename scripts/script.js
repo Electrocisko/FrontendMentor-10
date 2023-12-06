@@ -9,75 +9,81 @@ const inputDate = document.querySelectorAll(".input-date");
 
 const date2 = new Date(); // DATE2 IS TODAY
 console.log(date2);
- 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  removeWarnings(); // clean all warnings before validate
   let data = new FormData(form);
   let day = data.get("day");
   let month = data.get("month");
   let year = data.get("year");
-  if (!day || !month || !year) {
-    addWarnings();
-    addWarningsText();
+
+  //check the days in the month entered
+  let daysInMonth = 31;
+  if (month == 4 || month == 6 || month == 9 || month == 11) {
+    daysInMonth = 30;
+  } else if (month == 2) {
+    daysInMonth = 29;
   }
 
-if (day || month || year) removeWarnings();
+  if (!day) {
+    inputLabel[0].classList.add("warning");
+    inputDate[0].classList.add("border-warning");
+    inputWarning[0].innerHTML = "This field is required";
+  } else if (day > daysInMonth || day < 1) {
+    addWarnings();
+    inputDayWarning.innerHTML = "Must be a valid day";
+  }
 
-if(year > date2.getFullYear() || year < 1 ) {
-  addWarnings()
- inputYearWarning.innerHTML="Must be in the past"
-}
-if(month > date2.getMonth() || month < 1 ) {
-  addWarnings()
- inputMonthWarning.innerHTML="Must be in valid month"
-}
-//check the days in the month entered
-let daysInMonth = 31;
-if (month == 4 || month == 6 || month == 9 || month == 11) {
-  daysInMonth = 30;
-} else if (month == 2 ) {
-  daysInMonth = 29;
-}
- if ( day > daysInMonth || day < 1) {
-  addWarnings();
-  inputDayWarning.innerHTML="Must be a valid day"
- }
+  if (!month) {
+    inputLabel[1].classList.add("warning");
+    inputDate[1].classList.add("border-warning");
+    inputWarning[1].innerHTML = "This field is required";
+  } else if (month > 12 || month < 1) {
+    addWarnings();
+    inputMonthWarning.innerHTML = "Must be in valid month";
+  }
+
+  if (!year) {
+    inputLabel[2].classList.add("warning");
+    inputDate[2].classList.add("border-warning");
+    inputWarning[2].innerHTML = "This field is required";
+  } else if (year > date2.getFullYear() || year < 1) {  
+    addWarnings();
+    inputYearWarning.innerHTML = "Must be in the past";
+  }
+
   const date1 = new Date(year, parseInt(month) - 1, day);
   calculateAge(date1);
 });
 
-
-
-function addWarnings () {
-inputLabel.forEach(input => {
-  input.classList.add("warning");
-});
- inputDate.forEach(date => {
-  date.classList.add("border-warning")
- });
-}
-
-function addWarningsText () {
-  inputWarning.forEach(text => {
-    text.innerHTML='This field is required'
+function addWarnings() {
+  inputLabel.forEach((input) => {
+    input.classList.add("warning");
+  });
+  inputDate.forEach((date) => {
+    date.classList.add("border-warning");
   });
 }
 
-function removeWarnings () {
-  inputLabel.forEach(input => {
-    input.classList.remove("warning")
+function addWarningsText() {
+  inputWarning.forEach((text) => {
+    text.innerHTML = "This field is required";
   });
-  inputWarning.forEach(text => {
-    text.innerHTML=''
-  });
-  inputDate.forEach(date => {
-    date.classList.remove("border-warning")
-   });
-  }
+}
 
+function removeWarnings() {
+  inputLabel.forEach((input) => {
+    input.classList.remove("warning");
+  });
+  inputWarning.forEach((text) => {
+    text.innerHTML = "";
+  });
+  inputDate.forEach((date) => {
+    date.classList.remove("border-warning");
+  });
+}
 
 function calculateAge(date1) {
-
   const month1 = date1.getMonth();
   const month2 = date2.getMonth();
   const year1 = date1.getFullYear();
