@@ -65,9 +65,6 @@ form.addEventListener("submit", (e) => {
     showMonths.innerHTML=result.months;
     showYears.innerHTML=result.years;
   }
-
-  
-
 });
 
 function addWarnings() {
